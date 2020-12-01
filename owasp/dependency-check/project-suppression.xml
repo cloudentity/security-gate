@@ -188,6 +188,15 @@
     <packageUrl regex="true">^pkg:maven/org\.apache\.kafka/kafka\-clients@.*$</packageUrl>
     <cve>CVE-2019-12399</cve>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+     Kafka connect workers configuration is not allowed and also it is not utilized/exposed within the
+    final packaged software to exploit the attached vulnerability
+   file name: kafka-streams-2.1.1.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.apache\.kafka/kafka\-streams@.*$</packageUrl>
+    <cve>CVE-2019-12399</cve>
+  </suppress>
 
   <!-- Postgresql vuln package name wildcard match - false positive -->
   <suppress>
@@ -209,6 +218,16 @@
    ]]></notes>
     <packageUrl regex="true">^pkg:maven/org\.springframework\.security/spring\-security\-crypto@.*$</packageUrl>
     <cve>CVE-2018-1258</cve>
+  </suppress>
+
+  <!-- Vertx Windows OS vulnerability - non exploitable -->
+  <suppress>
+    <notes><![CDATA[
+    Services that utilizes these artifacted are not designed to be run on Windows OS for this vulnerability to be exploited
+   file name: vertx-core-3.9.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-core@.*$</packageUrl>
+    <cve>CVE-2019-17640</cve>
   </suppress>
 
 </suppressions>
