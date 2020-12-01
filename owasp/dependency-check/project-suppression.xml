@@ -208,6 +208,31 @@
     <packageUrl regex="true">^pkg:maven/com\.github\.jasync\-sql/jasync\-postgresql@.*$</packageUrl>
     <cve>CVE-2007-2138</cve>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: jasync-postgresql-1.1.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/com\.github\.jasync\-sql/jasync\-postgresql@.*$</packageUrl>
+    <cve>CVE-2010-0733</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+    Too many vulns to individual suppress with CVE, switching to cpe mode
+   file name: jasync-postgresql-1.1.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/com\.github\.jasync\-sql/jasync\-postgresql@.*$</packageUrl>
+    <cpe>cpe:/a:postgresql:postgresql</cpe>
+  </suppress>
+
+  <!-- Postgresql vuln package name wildcard match - false positive -->
+  <suppress>
+    <notes><![CDATA[
+    Too many vulns to individual suppress with CVE, switching to cpe mode
+      file name: vertx-pg-client-3.9.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^^pkg:maven/io\.vertx/vertx\-pg\-client@.*$</packageUrl>
+    <cpe>cpe:/a:postgresql:postgresql:3.9.4</cpe>
+  </suppress>
 
   <!-- Incorrect tooling bug  - false positive -->
   <!-- https://github.com/jeremylong/DependencyCheck/issues/1827 -->
@@ -221,12 +246,28 @@
   </suppress>
 
   <!-- Vertx Windows OS vulnerability - non exploitable -->
+  <!-- Services that utilizes these artifacts are not designed to be run on Windows OS for this vulnerability to be exploited -->
+  <!-- Most of the packages shows this vulnerability due to generic package match with vertx as well -->
   <suppress>
     <notes><![CDATA[
-    Services that utilizes these artifacted are not designed to be run on Windows OS for this vulnerability to be exploited
+    Services that utilizes these artifacts are not designed to be run on Windows OS for this vulnerability to be exploited
    file name: vertx-core-3.9.4.jar
    ]]></notes>
     <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-core@.*$</packageUrl>
+    <cve>CVE-2019-17640</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: vertx-kafka-client-3.9.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-kafka\-client@.*$</packageUrl>
+    <cpe>cpe:/a:eclipse:vert.x</cpe>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: vertx-unit-3.9.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-unit@.*$</packageUrl>
     <cve>CVE-2019-17640</cve>
   </suppress>
 
