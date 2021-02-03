@@ -228,10 +228,10 @@
   <suppress>
     <notes><![CDATA[
     Too many vulns to individual suppress with CVE, switching to cpe mode
-      file name: vertx-pg-client-3.9.*.jar
+      file name: vertx-pg-client-3.9.5.jar
    ]]></notes>
     <packageUrl regex="true">^^pkg:maven/io\.vertx/vertx\-pg\-client@.*$</packageUrl>
-    <cpe>cpe:/a:postgresql:postgresql:3.9.*</cpe>
+    <cpe>cpe:/a:postgresql:postgresql:3.9.5</cpe>
   </suppress>
 
   <!-- Incorrect tooling bug  - false positive -->
