@@ -233,6 +233,14 @@
     <packageUrl regex="true">^^pkg:maven/io\.vertx/vertx\-pg\-client@.*$</packageUrl>
     <cpe>cpe:/a:postgresql:postgresql:3.9.4</cpe>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+    Too many vulns to individual suppress with CVE, switching to cpe mode
+      file name: vertx-pg-client-3.9.5.jar
+   ]]></notes>
+    <packageUrl regex="true">^^pkg:maven/io\.vertx/vertx\-pg\-client@.*$</packageUrl>
+    <cpe>cpe:/a:postgresql:postgresql:3.9.5</cpe>
+  </suppress>
 
   <!-- Incorrect tooling bug  - false positive -->
   <!-- https://github.com/jeremylong/DependencyCheck/issues/1827 -->
@@ -258,6 +266,14 @@
   </suppress>
   <suppress>
     <notes><![CDATA[
+    Services that utilizes these artifacts are not designed to be run on Windows OS for this vulnerability to be exploited
+   file name: vertx-core-3.9.5.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-core@.*$</packageUrl>
+    <cve>CVE-2019-17640</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
    file name: vertx-kafka-client-3.9.4.jar
    ]]></notes>
     <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-kafka\-client@.*$</packageUrl>
@@ -265,7 +281,21 @@
   </suppress>
   <suppress>
     <notes><![CDATA[
+   file name: vertx-kafka-client-3.9.5.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-kafka\-client@.*$</packageUrl>
+    <cpe>cpe:/a:eclipse:vert.x</cpe>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
    file name: vertx-unit-3.9.4.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-unit@.*$</packageUrl>
+    <cve>CVE-2019-17640</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: vertx-unit-3.9.5.jar
    ]]></notes>
     <packageUrl regex="true">^pkg:maven/io\.vertx/vertx\-unit@.*$</packageUrl>
     <cve>CVE-2019-17640</cve>
